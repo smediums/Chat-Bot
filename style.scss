@@ -1,0 +1,111 @@
+// Finish Funtionality, Apply it to Texell Site Then Tweek Styling Here
+
+
+//Variables
+$bodyColor: #f8eae2;
+$botBubble: #535778b1;
+$userBubble: #e3bfa5;
+$chatBox: #5c482f;
+$chatIcon: #e3bfa5;
+$borderRadius: 12px;
+
+//mixins
+@mixin flexTainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin grid($numOfColumns) {
+    display: grid;
+    grid-template-columns: $numOfColumns;
+}
+
+@mixin chatBorderRadius($lftBtm, $rghtBtm) {
+    border-radius: 12px 12px $rghtBtm $lftBtm;
+}
+
+@import "./animations";
+@import "./chatBox";
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    display: flex;
+    width: 100vw;
+    background: $bodyColor;
+
+
+    .chatIcon,
+    .fa-undo,
+    .far.fa-user-circle,
+    .fa-cog{
+        font-size: 1.5rem;
+        z-index: 11;
+        color: $chatIcon;
+        cursor: pointer;
+        transition: 0.3s all cubic-bezier(0,.33,0,.97);
+        position: absolute;
+        padding: 0.5rem;
+    }
+
+    .fa-cog,
+    .far.fa-user-circle,
+    .chatIcon{
+        left: calc(25% - 0.5rem);
+    }
+
+// Header    
+    .header{
+        width: 3.5rem;
+        height: 100vh;
+        position: relative;
+        background: $chatBox;
+        align-items: flex-start;
+        transition: all 0.1s linear;
+        z-index: 10;
+
+        &.openChat{
+            height: calc(100 - (700px + 2rem));
+        }
+
+        .far.fa-user-circle{
+            top: 0.2rem;
+        }
+
+        .fa-cog{
+            bottom: 0.2rem;
+        }
+    
+
+//Chat Icon
+        .chatIcon{
+            top: 3rem;
+            opacity: 1;
+            
+
+            &.openChat{
+                opacity: 0;
+                left: 2.8rem;
+            }
+        }
+
+        .fa-undo{
+            top: 3rem;;
+            left: -1.4rem;
+            opacity: 0;
+            font-size: 1.4rem;
+
+            &.openChat{
+                opacity: 1;
+                left: calc(25% - 0.5rem);
+            }
+        }
+    } 
+}
