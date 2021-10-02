@@ -125,22 +125,14 @@ const botReponses = () => {
     const curTime = `${convertHour}:${minDisplay}${amOrPm}`;
 
     //Regex to check for
-    let greeting1 = /ello/i;
-    let greeting2 = /hey/i;
-    let greeting3 = /hi/i;
-    let time = /time/i;
-    let weather = /weather/i;
-    let food = /food/i;
-    let restaurant = /restaurant/i;
-    let help = /help/i;
-    let todayDate = /date/i;
-    // let nearMeLink = ''
-    // let nearestGasStation
-    // let timeStoreCloses
-    // let measurements
-    // let currencyCovert
-    // let recipe
-    // let prices
+    let greeting1 = /ello/i.test(userInput);
+    let greeting2 = /hey/i.test(userInput);
+    let greeting3 = /hi/i.test(userInput);
+    let weather = /weather/i.test(userInput);;
+    let food = /food/i.test(userInput);
+    let restaurant = /restaurant/i.test(userInput);
+    let time = /time/i.test(userInput);
+    let todayDate = /date/i.test(userInput);
 
 
 
@@ -151,35 +143,52 @@ const botReponses = () => {
         }
     }
 
+    const botRespond = () => {
 
-
-    const botRespond = (regex, botsResponse) => {
-        if (regex.test(userInput)) {
+        if(greeting1 || greeting2 || greeting3){
             chatContent.innerHTML += `<div class="userText"><i class="fas fa-user-circle"></i><p>${userInput}</p>${curTime}</div>`;
             setTimeout(() => {
-                chatContent.innerHTML += `<div class="botResponse"><p class="reponse">${botsResponse}</p>${curTime}</div>`;
+                chatContent.innerHTML += `<div class="botResponse"><p class="reponse">Hello, please ask a question.</p>${curTime}</div>`;
                 chatContent.lastElementChild.scrollIntoView(false);
             }, 550);
             chatContent.lastElementChild.scrollIntoView(false);
-        } else {
-            chatContent.innerHTML += '';
         }
+        if(weather){
+            chatContent.innerHTML += `<div class="userText"><i class="fas fa-user-circle"></i><p>${userInput}</p>${curTime}</div>`;
+            setTimeout(() => {
+                chatContent.innerHTML += `<div class="botResponse"><p class="reponse">You can check your cities weather here:<br> <a href="https://weather.com/weather/today/" target="_blank">Check Weather</a></p>${curTime}</div>`;
+                chatContent.lastElementChild.scrollIntoView(false);
+            }, 550);
+            chatContent.lastElementChild.scrollIntoView(false);
+        }
+        if(time){
+            chatContent.innerHTML += `<div class="userText"><i class="fas fa-user-circle"></i><p>${userInput}</p>${curTime}</div>`;
+            setTimeout(() => {
+                chatContent.innerHTML += `<div class="botResponse"><p class="reponse">The time is: ${curTime}</p>${curTime}</div>`;
+                chatContent.lastElementChild.scrollIntoView(false);
+            }, 550);
+            chatContent.lastElementChild.scrollIntoView(false);
+        }
+        if(todayDate){
+            chatContent.innerHTML += `<div class="userText"><i class="fas fa-user-circle"></i><p>${userInput}</p>${curTime}</div>`;
+            setTimeout(() => {
+                chatContent.innerHTML += `<div class="botResponse"><p class="reponse">Hello, please ask a question.</p>${curTime}</div>`;
+                chatContent.lastElementChild.scrollIntoView(false);
+            }, 550);
+            chatContent.lastElementChild.scrollIntoView(false);
+        }
+        if(food || restaurant){
+            chatContent.innerHTML += `<div class="userText"><i class="fas fa-user-circle"></i><p>${userInput}</p>${curTime}</div>`;
+            chatContent.innerHTML += `<div class="botResponse"><p class="reponse">Here are some places to eat near you:<br> <a href="https://www.bing.com/search?q=food+near+me&go=Search&qs=n&form=QBRE&sp=-1&pq=food+near+me&sc=8-6&sk=&cvid=10DF67413BA348CFB1A9D85B3D909AC2" target="_blank">Food</a></p>${curTime}</div>`;
+        }
+        if(userInput == '' || userInput == ' '){
+            chatContent.innerHTML += '';
+        };
 
     }
 
 
-
-    botRespond(greeting1, 'Hello, please ask a question');
-    botRespond(greeting2, 'Hello, please ask a question');
-    botRespond(greeting3, 'Hello, please ask a question');
-    botRespond(time, `The time is: ${curTime}`);
-    botRespond(weather, `You can check your cities weather here:<br> <a href="https://weather.com/weather/today/" target="_blank">Check Weather</a>`);
-    botRespond(food, `Here are some places to eat near you:<br> <a href="https://www.bing.com/search?q=food+near+me&go=Search&qs=n&form=QBRE&sp=-1&pq=food+near+me&sc=8-6&sk=&cvid=10DF67413BA348CFB1A9D85B3D909AC2" target="_blank">Food</a>`);
-    botRespond(restaurant, `Here are some places to eat near you:<br> <a href="https://www.bing.com/search?q=food+near+me&go=Search&qs=n&form=QBRE&sp=-1&pq=food+near+me&sc=8-6&sk=&cvid=10DF67413BA348CFB1A9D85B3D909AC2" target="_blank">Food</a>`);
-    botRespond(help, 'Maybe, it depends on what you need help with');
-    botRespond(todayDate, `Todays date is ${dayOfWeek}`);
-
-
+    botRespond();
 }
 
 
