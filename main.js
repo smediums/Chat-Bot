@@ -7,6 +7,7 @@ const nav = document.querySelector('nav');
 const chatIcon = document.querySelector('.chatIcon');
 const chatBox = document.querySelector('.chatBot');
 const chatContent = document.querySelector('.chatContent');
+const settings = document.querySelector('.fa-cog');
 
 
 
@@ -19,8 +20,8 @@ const toggleFunc = (trigger, eventType, item, classAdd, delay) => {
     });
 }
 
-toggleFunc(chatIcon, 'click', chatBox, 'openChat', 200);
-
+toggleFunc(chatIcon, 'click', chatBox, 'openChat', 80);
+toggleFunc(settings, 'click', settings, 'settings', 0);
 
 
 // All Chat Icon & Chat Box events 
@@ -222,12 +223,3 @@ document.querySelector('.fa-arrow-up').addEventListener('click', () => {
     chatContent.lastElementChild.scrollIntoView(false);
 
 })
-
-
-
-//User Online or Offline
-
-
-
-
-//Access Camera

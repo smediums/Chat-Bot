@@ -41,7 +41,46 @@ body{
     width: 100vw;
     background: $bodyColor;
 
+    .fa-robot,
+    .botName,
+    .botNameType{
+        height: auto;
+        text-align: center;
+        position: absolute;
+        transform: translateY(-50%);
+        color: rgba(51, 51, 51, 0.461);
+    }
+    .fa-robot{
+        top: 40%;
+        left: 3.5rem;
+        font-size: 15rem;
+        width: calc(100% - 3.5rem);
+    }
+    .botName,
+    .botNameType{
+        width: 55%;
+        top: 60%;
+        left: calc(3.5rem + ((100% - 3.5rem) / 2));
+        transform: translateX(-50%);
+        font-size: 1.5rem;
+    }
+    .botName{
+         span{
+             width: 150%;
+             position: absolute;
+             left: -4.4rem;
 
+         }
+    }
+
+    .botNameType{
+        transform-origin: right;
+        height: 28px;
+        background: $bodyColor;
+        animation: type 5s linear forwards 0.2s;
+
+    }
+    
     .chatIcon,
     .fa-undo,
     .far.fa-user-circle,
@@ -70,6 +109,7 @@ body{
         align-items: flex-start;
         transition: all 0.1s linear;
         z-index: 10;
+        overflow: hidden;
 
         &.openChat{
             height: calc(100 - (700px + 2rem));
@@ -81,6 +121,10 @@ body{
 
         .fa-cog{
             bottom: 0.2rem;
+            
+            &.settings{
+                transform: rotate(45deg);
+            }
         }
     
 
@@ -109,3 +153,162 @@ body{
         }
     } 
 }
+
+
+//Animations
+@keyframes type {
+    0%{
+        transform: translateX(-50%) scale(1, 1);
+    }
+    3%{
+        transform: translateX(-50%) scale(1, 1);
+    }
+    4%{
+        transform: translateX(-50%) scale(0.9, 1);
+    }
+    7%{
+        transform: translateX(-50%) scale(0.9, 1);
+    }
+    8%{
+        transform: translateX(-50%) scale(0.86, 1);
+    }
+    11%{
+        transform: translateX(-50%) scale(0.86, 1);
+    }
+    12%{
+        transform: translateX(-50%) scale(0.84, 1);
+    }
+    15%{
+        transform: translateX(-50%) scale(0.84, 1);
+    }
+    16%{
+        transform: translateX(-50%) scale(0.81, 1);
+    }
+    19%{
+        transform: translateX(-50%) scale(0.81, 1);
+    }
+    20%{
+        transform: translateX(-50%) scale(0.77, 1);
+    }
+    23%{
+        transform: translateX(-50%) scale(0.77, 1);
+    }
+    24%{
+        transform: translateX(-50%) scale(0.75, 1);
+    }
+    27%{
+        transform: translateX(-50%) scale(0.75, 1);
+    }
+    28%{
+        transform: translateX(-50%) scale(0.73, 1);
+    }
+    31%{
+        transform: translateX(-50%) scale(0.73, 1);
+    }
+    32%{
+        transform: translateX(-50%) scale(0.66, 1);
+    }
+    35%{
+        transform: translateX(-50%) scale(0.66, 1);
+    }
+    36%{
+        transform: translateX(-50%) scale(0.61, 1);
+    }
+    39%{
+        transform: translateX(-50%) scale(0.61, 1);
+    }
+    40%{
+        transform: translateX(-50%) scale(0.595, 1);
+    }
+    43%{
+        transform: translateX(-50%) scale(0.595, 1);
+    }
+    44%{
+        transform: translateX(-50%) scale(0.55, 1);
+    }
+    47%{
+        transform: translateX(-50%) scale(0.55, 1);
+    }
+    48%{
+        transform: translateX(-50%) scale(0.51, 1);
+    }
+    51%{
+        transform: translateX(-50%) scale(0.51, 1);
+    }
+    52%{
+        transform: translateX(-50%) scale(0.445, 1);
+    }
+    55%{
+        transform: translateX(-50%) scale(0.445, 1);
+    }
+    56%{
+        transform: translateX(-50%) scale(0.41, 1);
+    }
+    59%{
+        transform: translateX(-50%) scale(0.41, 1);
+    }
+    60%{
+        transform: translateX(-50%) scale(0.39, 1);
+    }
+    63%{
+        transform: translateX(-50%) scale(0.39, 1);
+    }
+    64%{
+        transform: translateX(-50%) scale(0.36, 1);
+    }
+    67%{
+        transform: translateX(-50%) scale(0.36, 1);
+    }
+    68%{
+        transform: translateX(-50%) scale(0.32, 1);
+    }
+    71%{
+        transform: translateX(-50%) scale(0.32, 1);
+    }
+    72%{
+        transform: translateX(-50%) scale(0.315, 1);
+    }
+    75%{
+        transform: translateX(-50%) scale(0.315, 1);
+    }
+    76%{
+        transform: translateX(-50%) scale(0.255, 1);
+    }
+    79%{
+        transform: translateX(-50%) scale(0.255, 1);
+    }
+    80%{
+        transform: translateX(-50%) scale(0.215, 1);
+    }
+    83%{
+        transform: translateX(-50%) scale(0.215, 1);
+    }
+    84%{
+        transform: translateX(-50%) scale(0.185, 1);
+    }
+    87%{
+        transform: translateX(-50%) scale(0.185, 1);
+    }
+    88%{
+        transform: translateX(-50%) scale(0.145, 1);
+    }
+    91%{
+        transform: translateX(-50%) scale(0.145, 1);
+    }
+    92%{
+        transform: translateX(-50%) scale(0.10, 1);
+    }
+    95%{
+        transform: translateX(-50%) scale(0.10, 1);
+    }
+    96%{
+        transform: translateX(-50%) scale(0.06, 1);
+    }
+    99%{
+        transform: translateX(-50%) scale(0.04, 1);
+    }
+    100%{
+        transform: translateX(-50%) scale(0, 1);
+    }
+}
+
