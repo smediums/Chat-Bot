@@ -1,6 +1,3 @@
-// Finish Funtionality, Apply it to Texell Site Then Tweek Styling Here
-
-
 //Variables
 $bodyColor: #f8eae2;
 $botBubble: #535778b1;
@@ -25,7 +22,6 @@ $borderRadius: 12px;
     border-radius: 12px 12px $rghtBtm $lftBtm;
 }
 
-@import "./animations";
 @import "./chatBox";
 
 
@@ -56,30 +52,6 @@ body{
         font-size: 15rem;
         width: calc(100% - 3.5rem);
     }
-    .botName,
-    .botNameType{
-        width: 55%;
-        top: 60%;
-        left: calc(3.5rem + ((100% - 3.5rem) / 2));
-        transform: translateX(-50%);
-        font-size: 1.5rem;
-    }
-    .botName{
-         span{
-             width: 150%;
-             position: absolute;
-             left: -4.4rem;
-
-         }
-    }
-
-    .botNameType{
-        transform-origin: right;
-        height: 28px;
-        background: $bodyColor;
-        animation: type 5s linear forwards 0.2s;
-
-    }
     
     .chatIcon,
     .fa-undo,
@@ -105,210 +77,12 @@ body{
         width: 3.5rem;
         height: 100vh;
         position: relative;
-        background: $chatBox;
         align-items: flex-start;
-        transition: all 0.1s linear;
-        z-index: 10;
-        overflow: hidden;
-
-        &.openChat{
-            height: calc(100 - (700px + 2rem));
-        }
 
         .far.fa-user-circle{
             top: 0.2rem;
         }
-
-        .fa-cog{
-            bottom: 0.2rem;
-            
-            &.settings{
-                transform: rotate(45deg);
-            }
-        }
-    
-
-//Chat Icon
-        .chatIcon{
-            top: 3rem;
-            opacity: 1;
-            
-
-            &.openChat{
-                opacity: 0;
-                left: 2.8rem;
-            }
-        }
-
-        .fa-undo{
-            top: 3rem;;
-            left: -1.4rem;
-            opacity: 0;
-            font-size: 1.4rem;
-
-            &.openChat{
-                opacity: 1;
-                left: calc(25% - 0.5rem);
-            }
-        }
     } 
 }
 
-
-//Animations
-@keyframes type {
-    0%{
-        transform: translateX(-50%) scale(1, 1);
-    }
-    3%{
-        transform: translateX(-50%) scale(1, 1);
-    }
-    4%{
-        transform: translateX(-50%) scale(0.9, 1);
-    }
-    7%{
-        transform: translateX(-50%) scale(0.9, 1);
-    }
-    8%{
-        transform: translateX(-50%) scale(0.86, 1);
-    }
-    11%{
-        transform: translateX(-50%) scale(0.86, 1);
-    }
-    12%{
-        transform: translateX(-50%) scale(0.84, 1);
-    }
-    15%{
-        transform: translateX(-50%) scale(0.84, 1);
-    }
-    16%{
-        transform: translateX(-50%) scale(0.81, 1);
-    }
-    19%{
-        transform: translateX(-50%) scale(0.81, 1);
-    }
-    20%{
-        transform: translateX(-50%) scale(0.77, 1);
-    }
-    23%{
-        transform: translateX(-50%) scale(0.77, 1);
-    }
-    24%{
-        transform: translateX(-50%) scale(0.75, 1);
-    }
-    27%{
-        transform: translateX(-50%) scale(0.75, 1);
-    }
-    28%{
-        transform: translateX(-50%) scale(0.73, 1);
-    }
-    31%{
-        transform: translateX(-50%) scale(0.73, 1);
-    }
-    32%{
-        transform: translateX(-50%) scale(0.66, 1);
-    }
-    35%{
-        transform: translateX(-50%) scale(0.66, 1);
-    }
-    36%{
-        transform: translateX(-50%) scale(0.61, 1);
-    }
-    39%{
-        transform: translateX(-50%) scale(0.61, 1);
-    }
-    40%{
-        transform: translateX(-50%) scale(0.595, 1);
-    }
-    43%{
-        transform: translateX(-50%) scale(0.595, 1);
-    }
-    44%{
-        transform: translateX(-50%) scale(0.55, 1);
-    }
-    47%{
-        transform: translateX(-50%) scale(0.55, 1);
-    }
-    48%{
-        transform: translateX(-50%) scale(0.51, 1);
-    }
-    51%{
-        transform: translateX(-50%) scale(0.51, 1);
-    }
-    52%{
-        transform: translateX(-50%) scale(0.445, 1);
-    }
-    55%{
-        transform: translateX(-50%) scale(0.445, 1);
-    }
-    56%{
-        transform: translateX(-50%) scale(0.41, 1);
-    }
-    59%{
-        transform: translateX(-50%) scale(0.41, 1);
-    }
-    60%{
-        transform: translateX(-50%) scale(0.39, 1);
-    }
-    63%{
-        transform: translateX(-50%) scale(0.39, 1);
-    }
-    64%{
-        transform: translateX(-50%) scale(0.36, 1);
-    }
-    67%{
-        transform: translateX(-50%) scale(0.36, 1);
-    }
-    68%{
-        transform: translateX(-50%) scale(0.32, 1);
-    }
-    71%{
-        transform: translateX(-50%) scale(0.32, 1);
-    }
-    72%{
-        transform: translateX(-50%) scale(0.315, 1);
-    }
-    75%{
-        transform: translateX(-50%) scale(0.315, 1);
-    }
-    76%{
-        transform: translateX(-50%) scale(0.255, 1);
-    }
-    79%{
-        transform: translateX(-50%) scale(0.255, 1);
-    }
-    80%{
-        transform: translateX(-50%) scale(0.215, 1);
-    }
-    83%{
-        transform: translateX(-50%) scale(0.215, 1);
-    }
-    84%{
-        transform: translateX(-50%) scale(0.185, 1);
-    }
-    87%{
-        transform: translateX(-50%) scale(0.185, 1);
-    }
-    88%{
-        transform: translateX(-50%) scale(0.145, 1);
-    }
-    91%{
-        transform: translateX(-50%) scale(0.145, 1);
-    }
-    92%{
-        transform: translateX(-50%) scale(0.10, 1);
-    }
-    95%{
-        transform: translateX(-50%) scale(0.10, 1);
-    }
-    96%{
-        transform: translateX(-50%) scale(0.06, 1);
-    }
-    99%{
-        transform: translateX(-50%) scale(0.04, 1);
-    }
-    100%{
-        transform: translateX(-50%) scale(0, 1);
-    }
-}
 
